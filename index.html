@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>爱游戏 · 温柔重逢</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f9fb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2c2c2e;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-wrap {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ——— hero 横幅 ——— */
+        .hero {
+            padding: 72px 0 48px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: 0.04em;
+            color: #1f1f1f;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            font-weight: 480;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7c7c80;
+            border-top: 1px solid #e1e1e4;
+            display: inline-block;
+            padding-top: 14px;
+            margin-top: 4px;
+            font-weight: 380;
+        }
+
+        .hero .sub i {
+            font-style: normal;
+            background: #ececf0;
+            padding: 0 10px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #5f5f64;
+        }
+
+        /* ——— 分隔装饰 ——— */
+        .leaf-divider {
+            text-align: center;
+            margin: 28px 0 32px 0;
+            color: #cbcbd0;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+        }
+
+        /* ——— 正文段落 ——— */
+        .prose {
+            padding-bottom: 20px;
+        }
+
+        .prose h2 {
+            font-size: 1.25rem;
+            font-weight: 450;
+            margin: 36px 0 8px 0;
+            color: #222;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .prose h2::before {
+            content: "◆";
+            color: #b0b0b8;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            font-weight: 300;
+        }
+
+        .prose p {
+            margin: 14px 0;
+            font-size: 0.98rem;
+            color: #3a3a3c;
+            text-align: justify;
+        }
+
+        .prose p a {
+            color: #3b5b8c;
+            text-decoration: none;
+            border-bottom: 1px solid #d0d9e5;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .prose p a:hover {
+            color: #1c3b5e;
+            border-bottom-color: #1c3b5e;
+        }
+
+        .prose .quiet-note {
+            background: #f0f0f3;
+            padding: 20px 22px;
+            border-radius: 20px;
+            margin: 28px 0 24px 0;
+            font-size: 0.93rem;
+            color: #3f3f42;
+            border-left: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .prose .quiet-note strong {
+            font-weight: 480;
+            color: #2a2a2c;
+        }
+
+        /* ——— 页尾 ——— */
+        .site-footer {
+            margin-top: 48px;
+            padding: 32px 0 48px 0;
+            border-top: 1px solid #e6e6ec;
+            text-align: center;
+        }
+
+        .site-footer .foot-note {
+            font-size: 0.9rem;
+            color: #8b8b92;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        .site-footer .foot-note a {
+            color: #3b5b8c;
+            text-decoration: none;
+            border-bottom: 1px solid #d3d9e2;
+        }
+
+        .site-footer .foot-note a:hover {
+            color: #1a314a;
+        }
+
+        .footer-arrow {
+            display: inline-block;
+            margin-top: 14px;
+            color: #b9b9c2;
+            font-size: 0.85rem;
+        }
+
+        /* ——— 响应式 ——— */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .page-wrap {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+            .prose p {
+                font-size: 0.95rem;
+            }
+            .prose .quiet-note {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>再·<span>爱游戏</span></h1>
+        <div class="sub">
+            一次安静的重访 &nbsp; <i>随身的角落</i>
+        </div>
+    </div>
+
+    <div class="leaf-divider">· · ·</div>
+
+    <!-- 三段自然介绍 -->
+    <div class="prose">
+
+        <h2>为什么我们总会回来</h2>
+        <p>
+            有些页面并不会刻意提醒你它的存在，但你会在某个安静的午后、通勤的片刻，甚至睡前发呆时，忽然想起它。<a href="https://portalapp-aiyouxi.com.cn">爱游戏</a>就是这样的一个地方。它不喧哗，不推送冗余的通知，只是安静地待在你的浏览器收藏夹里，等你想要短暂抽离的时候，轻轻点开。再次访问不是一种习惯，更像是一种温和的默契——你知道那里不会有打扰，只有一片为你留着的、熟悉的空间。
+        </p>
+
+        <h2>收藏，是为了不忘记</h2>
+        <p>
+            收藏夹里的站点来来去去，但总有几个始终舍不得删除。<a href="https://portalapp-aiyouxi.com.cn">爱游戏</a>对我来说，就是这样的存在。它像一本翻旧了的杂志，每一页都有折角，但每次重新摊开，依然能找到一点新鲜的安慰。收藏的动作其实很小，小到只需要一次点击，但它背后是一种“我还会再来”的温柔承诺。如果你也曾把某个页面放在显眼的位置，大概能明白这种感受——不是因为它多特别，而是因为它恰好陪伴过你。
+        </p>
+
+        <div class="quiet-note">
+            <strong>一个不经意的提醒：</strong> 你在收藏夹里看到的那些页面，往往比社交平台上的信息流更诚实。它们不会改变自己去迎合算法，它们只是等着你。
+        </div>
+
+        <h2>持续关注，但不必追赶</h2>
+        <p>
+            有些网站让人疲惫，因为它们总是要求你“跟上”。但<a href="https://portalapp-aiyouxi.com.cn">爱游戏</a>有一种缓慢的节奏——你可以隔几周再回去，内容依然在那里，不催你，不给你红点。持续关注在这里不是一种负担，而是一种悠然的后退。你不需要每天打卡，不需要担心错过什么。它更像是你放在远处的一盏灯，你知道它亮着，就够了。
+        </p>
+
+        <!-- FAQ 摘要式段落，融入自然叙述 -->
+        <p>
+            也许你会问：为什么这样一个简单的页面值得专门收藏？其实答案就藏在“再次打开”的动作里。每一次访问都是一次微小的重逢，而页面本身几乎没有变化，变的是你。所以如果你在某次浏览中偶然感到轻松，不妨把它留下。不用刻意安排时间，像老朋友一样，想起来了就去看看。
+        </p>
+
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="site-footer">
+        <div class="foot-note">
+            如果你也愿意把这里放进收藏夹，<br>
+            下次想找个安静的角落时，记得还有 <a href="https://portalapp-aiyouxi.com.cn">爱游戏</a>。
+        </div>
+        <div class="footer-arrow">—— 保持缓慢，保持连接 ——</div>
+    </footer>
+
+</div>
+</body>
+</html>

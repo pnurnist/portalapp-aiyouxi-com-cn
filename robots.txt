@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pnurnist.github.io/portalapp-aiyouxi-com-cn/sitemap.xml
