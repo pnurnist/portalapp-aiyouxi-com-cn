@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>PG游戏 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f3f8fc;
+            line-height: 1.6;
+            color: #1a2f3b;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- hero 区 ---------- */
+        .hero {
+            background: linear-gradient(145deg, #d7f0f5 0%, #b6e2e9 100%);
+            padding: 4rem 0 3.5rem;
+            border-bottom: 4px solid #3d9eaa;
+        }
+
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #135562;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 680px;
+            color: #1f4d58;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge {
+            background: #f5fcfd;
+            border: 1px solid #7dc4ce;
+            border-radius: 60px;
+            padding: 0.65rem 2rem;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #176977;
+            box-shadow: 0 2px 6px rgba(0, 40, 50, 0.06);
+        }
+
+        /* ---------- 网格卡片区 （优势 / 说明混合） ---------- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            padding: 3rem 0 1.8rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem 1.8rem;
+            box-shadow: 0 6px 18px rgba(0, 70, 80, 0.05);
+            border: 1px solid #d4e9ef;
+            transition: transform 0.12s ease, box-shadow 0.15s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 90, 100, 0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .card h3 {
+            color: #0b4a58;
+            font-weight: 540;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            color: #2a4f5b;
+            font-size: 0.98rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #e3f2f6;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            color: #0a5f6e;
+            margin-top: 1rem;
+        }
+
+        /* ---------- 说明区 (叙述段) ---------- */
+        .narrative {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.4rem 2.2rem;
+            margin: 0.8rem 0 2.2rem;
+            border: 1px solid #c6dfe6;
+            box-shadow: 0 2px 12px rgba(0, 60, 70, 0.03);
+        }
+
+        .narrative h2 {
+            font-size: 1.6rem;
+            font-weight: 520;
+            color: #125764;
+            border-left: 5px solid #3d9eaa;
+            padding-left: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .narrative p {
+            margin-bottom: 1rem;
+            color: #1c414d;
+        }
+
+        .narrative a {
+            color: #106c7c;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            font-weight: 500;
+        }
+
+        .narrative a:hover {
+            color: #1196aa;
+        }
+
+        .narrative .meta-note {
+            background: #f0f9fb;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.88rem;
+            color: #175f6c;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-summary {
+            padding: 1.2rem 0 0.6rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #115461;
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #cfe1e7;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item .q {
+            font-weight: 560;
+            color: #164d5a;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .faq-item .q::before {
+            content: "Q";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #3d9eaa;
+            color: white;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .faq-item .a {
+            padding-left: 2.2rem;
+            font-size: 0.95rem;
+            color: #1d4956;
+            margin-top: 0.25rem;
+        }
+
+        .faq-more {
+            margin-top: 1.2rem;
+            color: #1b6575;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- 底部 ---------- */
+        .footer {
+            margin: 3rem 0 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #bfdae2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #2b5d6a;
+        }
+
+        .footer a {
+            color: #1d6e7e;
+            text-decoration: none;
+            border-bottom: 1px dotted #8abbc7;
+        }
+
+        .footer a:hover {
+            border-bottom: 1px solid #2b8a9c;
+        }
+
+        .footer-credit {
+            opacity: 0.7;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .narrative {
+                padding: 1.8rem 1.2rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-inner">
+                <h1>PG游戏 · 简明指引</h1>
+                <p>一个以 PG 游戏为核心的内容站点，帮助使用者快速识别用途、理解背景、找到所需信息。</p>
+                <span class="hero-badge">✦ 聚焦 PG 游戏领域</span>
+            </div>
+        </section>
+
+        <!-- 网格卡片 —— 优势 & 说明混合 -->
+        <div class="card-grid">
+            <div class="card">
+                <span class="card-icon">🧩</span>
+                <h3>定位清晰</h3>
+                <p>整个站点围绕 <strong>PG游戏</strong> 这一主题展开，从基础介绍到相关细节都有覆盖。不需要在页面间跳转寻找入口。</p>
+                <span class="tag">一目了然</span>
+            </div>
+            <div class="card">
+                <span class="card-icon">📂</span>
+                <h3>内容组织</h3>
+                <p>按功能区块划分，无论是想了解背景还是查阅常见问题，都能在对应区域快速找到线索。</p>
+                <span class="tag">结构明确</span>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌱</span>
+                <h3>持续更新</h3>
+                <p>站内信息保持活跃，跟随 PG 游戏相关动态做调整，避免内容停滞或过时。</p>
+                <span class="tag">动态维护</span>
+            </div>
+            <div class="card">
+                <span class="card-icon">⚖️</span>
+                <h3>克制表达</h3>
+                <p>不堆砌夸张宣传，以提供实用信息为主。用户能根据自身需要判断价值。</p>
+                <span class="tag">实在叙述</span>
+            </div>
+        </div>
+
+        <!-- 说明区（叙述性段落，含链接） -->
+        <div class="narrative">
+            <h2>这个站点在做什么</h2>
+            <p>
+                简单来说，这里的一切都围绕 <strong>PG游戏</strong> 这个主题。如果你正在寻找一个能够直接了解该主题的页面，那么你已经处于正确的位置。从站点结构上看，首页提供了几个主要信息块：既有对 PG 游戏所涵盖内容的概括，也有针对常见疑问的简要回应。
+            </p>
+            <p>
+                这并不是一个复杂的产品展示页，而更像一个信息导航点。你可以通过句子中嵌入的链接，直接进入 <a href="https://to-pggame.com">PG游戏</a> 相关页面进一步阅读。链接本身自然融入叙述，不打断浏览节奏。
+            </p>
+            <p>
+                不少访问者希望快速确认“这个网站是否与我找的东西有关”。因此首页特意降低了视觉噪音，用蓝绿色点缀和网格卡片来区分功能区域，同时在移动设备上保持同等可读性。
+            </p>
+            <span class="meta-note">📌 使用场景举例：想快速评估站点内容、确认主题匹配度</span>
+        </div>
+
+        <!-- FAQ 摘要（只展示前三个，完整 FAQ 在站内） -->
+        <div class="faq-summary">
+            <h2>常见疑问 · 摘要</h2>
+            <div class="faq-item">
+                <div class="q">这个页面是关于什么的？</div>
+                <div class="a">它是一个介绍页，帮助你了解 <strong>PG游戏</strong> 相关站点的主要用途和内容范围。你可以把它看作一个起始点。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">内容会频繁变动吗？</div>
+                <div class="a">站内内容会按需做调整，但首页介绍部分保持相对稳定，确保新访问者不会感到困惑。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">如何在手机上看这个页面？</div>
+                <div class="a">整页采用响应式设计，卡片和文字会自动适应屏幕宽度，在移动端同样清晰易读。</div>
+            </div>
+            <div class="faq-more">—— 更多 FAQ 可在站内对应区域查阅 ——</div>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="footer">
+            <div>
+                <span>主题：</span>
+                <a href="https://to-pggame.com">PG游戏</a>
+                <span style="margin:0 0.4rem;">·</span>
+                <span class="footer-credit">介绍页 · 克制叙述</span>
+            </div>
+            <div>
+                <span>© 2025 · 仅作信息索引</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
