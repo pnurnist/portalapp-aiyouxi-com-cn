@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 · 1xbet 信息库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f2f4f7;
+            color: #1e2a36;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* hero 分区：资料库标题 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6eaf0;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0d1926;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #4b5b6b;
+            max-width: 720px;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #eef1f5;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #2c3e50;
+            border: 1px solid #dce2ea;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 960px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid #e2e7ee;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 0.6rem;
+            border-left: 3px solid #9aaec2;
+            padding-left: 0.8rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2c3e50;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7d8e9e;
+        }
+
+        /* 说明区 - 长文本 */
+        .explain-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e7ee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .explain-block h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 1rem;
+        }
+
+        .explain-block p {
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+
+        .explain-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 提示区 + FAQ 摘要 (合并为提示卡片) */
+        .tip-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tip-card {
+            flex: 1 1 280px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid #e2e7ee;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .tip-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a2c3b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tip-card p, .tip-card li {
+            font-size: 0.93rem;
+            color: #2d4052;
+        }
+
+        .tip-card ul {
+            padding-left: 1.2rem;
+        }
+
+        .tip-card ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* 相关信息区 */
+        .related-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e7ee;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .related-box h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #dee4ec;
+            padding-bottom: 0.6rem;
+        }
+
+        .related-box .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.8rem;
+        }
+
+        .related-box .tag-item {
+            background: #eef1f6;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #1e2f3f;
+            border: 1px solid #d5dce6;
+        }
+
+        /* 内联链接样式 */
+        a {
+            color: #1f5680;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c6db;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #0d3b5c;
+            border-bottom: 1px solid #1f5680;
+        }
+
+        /* 底部 */
+        .footnote {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6f7f8f;
+            border-top: 1px solid #d9e0e8;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footnote span {
+            background: #e7ecf2;
+            padding: 0.1rem 0.6rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            color: #3f5568;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .explain-block, .related-box {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 资料库标题 -->
+    <div class="hero">
+        <h1>📁 资料库 · 1xbet 信息索引</h1>
+        <div class="sub">
+            从使用说明、背景提示到常见疑问，围绕 <strong><a href="https://safeweb-1xbet.com">1xbet</a></strong> 整理了一份结构化的知识卡片与参考条目，
+            便于快速检索与对照。
+        </div>
+        <div class="meta-badge">版本：2025 · 目录式索引</div>
+    </div>
+
+    <!-- 卡片网格: 特点 / 场景 / 背景 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>📌 平台特点</h3>
+            <ul>
+                <li>覆盖体育、电竞、金融等多样化赔率选项</li>
+                <li>界面支持多语言，适配多种设备</li>
+                <li>实时数据与统计模块嵌入赛事页面</li>
+                <li>账户管理、存取款流程说明清晰</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🗂 典型使用场景</h3>
+            <ul>
+                <li>赛前查阅赔率变动与历史数据</li>
+                <li>直播过程中分段跟进盘口变化</li>
+                <li>多账户或团队协作时的信息参考</li>
+                <li>通过资料区查找赛事规则说明</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>📚 背景与认知</h3>
+            <ul>
+                <li>面向全球用户提供统一的账户体系</li>
+                <li>不同地区合规框架差异导致功能微调</li>
+                <li>资料整理可辅助理解功能逻辑</li>
+                <li>持续更新的帮助中心与条款页面</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 说明区: 从资料整理的角度展开 -->
+    <div class="explain-block">
+        <h2>关于信息索引的说明</h2>
+        <p>
+            本页以“资料整理”为切入点，将围绕 <a href="https://safeweb-1xbet.com">1xbet</a> 的相关条目、提示及参考信息进行结构化陈列。
+            不同于单一的推广页，这里更侧重于帮助使用者建立对平台功能模块、常见用语的认知框架，
+            从而在查阅官方材料时更容易定位目标内容。
+        </p>
+        <p>
+            例如，在体育赛事板块中，存在大量专业术语（如 handicap、over/under、moneyline 等），
+            通过索引卡片可以快速了解其基本定义与适用场景。同样地，在账户安全与存取款环节，
+            提前阅读说明区的整理条目，有助于减少操作时的疑惑。
+        </p>
+        <p>
+            整个页面的设计遵循“由概述到细节”的节奏：先通过卡片把握整体轮廓，再经由提示区与 FAQ 摘要
+            深入具体话题。每个模块都保持独立但又彼此承接，方便按需跳读。
+        </p>
+    </div>
+
+    <!-- 提示区 + FAQ 摘要 (两个 tip-card) -->
+    <div class="tip-area">
+        <div class="tip-card">
+            <h4>⚡ 使用提示</h4>
+            <ul>
+                <li>查阅赔率前先确认比赛状态与盘口截止时间</li>
+                <li>账户设置中可调整语言、时区及通知偏好</li>
+                <li>部分功能需要完成身份验证后方可使用</li>
+                <li>建议收藏官方帮助页面，获取最新政策</li>
+            </ul>
+        </div>
+        <div class="tip-card">
+            <h4>❓ FAQ 摘要</h4>
+            <ul>
+                <li><strong>如何重置密码？</strong> 登录页点击“忘记密码”，按邮件指引操作。</li>
+                <li><strong>提现通常需要多久？</strong> 根据支付方式不同，从数小时到数个工作日。</li>
+                <li><strong>能否在多个设备登录？</strong> 可以，但注意账户安全，避免公共场所保存密码。</li>
+                <li><strong>赛事取消时结算规则？</strong> 一般按1.00赔率退还，具体查看条款。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 相关信息区 (标签式) -->
+    <div class="related-box">
+        <h2>📎 相关信息分类</h2>
+        <div class="tags">
+            <span class="tag-item">体育规则</span>
+            <span class="tag-item">赔率类型</span>
+            <span class="tag-item">账户等级</span>
+            <span class="tag-item">支付方式</span>
+            <span class="tag-item">条款更新</span>
+            <span class="tag-item">隐私政策</span>
+            <span class="tag-item">客服渠道</span>
+            <span class="tag-item">技术对接</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.93rem; color: #2d4052;">
+            以上标签可在官方资料库中对应详细页面。如需了解更多，可直接浏览 
+            <a href="https://safeweb-1xbet.com">1xbet</a> 的完整信息板块。
+        </p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footnote">
+        <span>资料索引页 · 内容基于公开信息整理</span> 
+        &nbsp;—&nbsp; 本页仅为知识库入口，不构成操作建议。
+    </div>
+
+</div>
+</body>
+</html>
