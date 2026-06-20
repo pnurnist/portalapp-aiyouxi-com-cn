@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG游戏 · 专题介绍</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Inter", "PingFang SC", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+            background: #fbfbfa;
+            color: #1f2a3a;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2.4rem 1.6rem 3.2rem;
+        }
+        /* hero 横幅区 */
+        .hero {
+            padding: 4.2rem 0 2.8rem;
+            border-bottom: 1px solid #ecece8;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #15212e;
+            margin-bottom: 0.5rem;
+        }
+        .hero .sub {
+            display: block;
+            font-weight: 380;
+            font-size: 1rem;
+            color: #6f7b8c;
+            margin-top: 0.3rem;
+        }
+        .hero p {
+            margin-top: 1.6rem;
+            font-size: 1.05rem;
+            color: #2b3648;
+            max-width: 580px;
+        }
+        /* 背景说明区 */
+        .backdrop {
+            margin: 2.4rem 0 2.2rem;
+            padding: 2rem 2rem 1.8rem;
+            background: #f2f3f0;
+            border-radius: 20px;
+        }
+        .backdrop h2 {
+            font-size: 1.1rem;
+            font-weight: 520;
+            margin-bottom: 1rem;
+            color: #16212e;
+            letter-spacing: 0.01em;
+        }
+        .backdrop p {
+            font-size: 0.96rem;
+            color: #2c384a;
+            margin-bottom: 0.8rem;
+        }
+        .backdrop p:last-child {
+            margin-bottom: 0;
+        }
+        /* 三段介绍 (杂志模块) */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2.8rem 0 3rem;
+        }
+        .feature-card {
+            border-left: 3px solid #d4d8d0;
+            padding-left: 1.4rem;
+        }
+        .feature-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #6e7b8b;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            background: #ecedea;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1b283a;
+            margin-bottom: 0.6rem;
+        }
+        .feature-card p {
+            font-size: 0.96rem;
+            color: #334153;
+        }
+        /* 页尾访问提示 */
+        .site-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5df;
+            font-size: 0.95rem;
+            color: #3b485b;
+            text-align: left;
+        }
+        .site-footer a {
+            color: #1f2a3a;
+            text-decoration: none;
+            border-bottom: 1px solid #b6bdb3;
+            transition: border 0.15s, color 0.15s;
+        }
+        .site-footer a:hover {
+            color: #0b131f;
+            border-bottom-color: #0b131f;
+        }
+        .foot-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #68748a;
+        }
+        /* 响应式细节 */
+        @media (max-width: 480px) {
+            .page { padding: 1.6rem 1.2rem 2.4rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .backdrop { padding: 1.5rem 1.2rem; }
+            .feature-card { padding-left: 1rem; }
+        }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 首页横幅 -->
+        <div class="hero">
+            <h1>
+                PG游戏
+                <span class="sub">用途识别 · 专题</span>
+            </h1>
+            <p>
+                给快速查找网站用途的访问者一份清晰指引：<strong>PG游戏</strong> 是一个集中展示 PG 系列游戏产品的信息型站点，聚合玩法介绍、题材分类与内容索引，并非模拟器或下载平台。
+            </p>
+        </div>
+
+        <!-- 背景说明 -->
+        <div class="backdrop">
+            <h2>为什么会有这个网站</h2>
+            <p>
+                随着 PG 游戏在多个地区的知名度上升，大量用户希望快速了解其产品线、题材特点以及官方动态。然而通用搜索引擎反馈的结果混杂，信息碎片化。 
+                <strong>now-pggame.com</strong> 定位为轻量级导航与介绍页，帮助访问者在一处集中浏览 PG 游戏的主要系列、视觉风格与主题分类，减少信息筛选成本。
+            </p>
+            <p>
+                网站内容围绕游戏背景、机制概要、特色标签展开，不涉及下载链接、第三方充值或外挂工具，所呈现的资料均基于公开可查的产品信息整理。
+            </p>
+        </div>
+
+        <!-- 三段自然介绍 (杂志式卡片) -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="tag">产品线</span>
+                <h3>主题覆盖与系列分布</h3>
+                <p>
+                    PG 游戏旗下拥有数十款不同题材的电子游戏，涵盖自然冒险、神话重构、经典街机复刻以及现代叙事类。每个系列均有独立的视觉识别与核心玩法机制，从老虎机风格到回合制策略均有涉及。该站将系列按主题分组，让新接触的用户能根据偏好快速定位感兴趣的方向。
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="tag">信息索引</span>
+                <h3>结构化游戏档案</h3>
+                <p>
+                    每款游戏在站内均配有简要档案：包含背景设定、主要玩法亮点、画面风格标签以及适玩环境说明。不堆砌参数，而是提炼每款游戏最核心的体验差异，例如“高波动 / 低波动”、“线性剧情 / 沙盒元素”等，帮助玩家判断是否符合预期。
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="tag">站点边界</span>
+                <h3>确切说明与使用场景</h3>
+                <p>
+                    网站不提供游戏客户端、模拟器或实时对战服务，也不存储任何受版权保护的资源。它本质上是一个内容索引与介绍页面，适合以下场景：想了解 PG 游戏有哪些系列、想在试玩前查看玩法简介、需要快速确认某款游戏的主题归属。<br>
+                    如需寻找具体产品，建议直接访问各游戏官方发布渠道。
+                </p>
+            </div>
+        </div>
+
+        <!-- 页尾访问提示 + 链接 -->
+        <div class="site-footer">
+            <p>
+                若需查阅完整的游戏系列介绍、风格分类与索引，可直接前往 
+                <a href="https://now-pggame.com">PG游戏</a> 
+                主站页面。站内信息保持定期更新，确保与公开产品动态基本同步。
+            </p>
+            <p class="foot-note">
+                本页仅为独立专题介绍，与游戏版权方无直接关联。所有产品名称、商标及视觉素材均属于各自权利人。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
